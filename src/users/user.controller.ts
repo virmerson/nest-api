@@ -15,11 +15,11 @@ export class UsersController{
     
      @Get(':id')
      findOne(@Param('id') id:string){
-        return this.userService.findOne(+id);
+        return this.userService.findOneById(+id);
      }
 
      @Post()
-     create(@Body() createUseDto: {email:string, name:string}){
+     create(@Body() createUseDto: {email:string, name:string, password:string}){
         return this.userService.create(createUseDto)
      }
 
